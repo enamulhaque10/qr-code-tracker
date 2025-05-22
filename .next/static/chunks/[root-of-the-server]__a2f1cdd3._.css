@@ -449,8 +449,16 @@
     font-weight: var(--font-weight-semibold);
   }
 
+  .text-wrap {
+    text-wrap: wrap;
+  }
+
   .break-words {
     overflow-wrap: break-word;
+  }
+
+  .wrap-anywhere {
+    overflow-wrap: anywhere;
   }
 
   .text-gray-500 {

@@ -2,9 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-<<<<<<< HEAD
     {"offset": {"line": 12, "column": 0}, "map": {"version":3,"sources":["file:///home/eatl/qr-code-tracker/src/app/favicon.ico.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":[],"mappings":";;;AAAA;;uCACe;IAAE,KAAA,8GAAA,CAAA,UAAG;IAAE,OAAO;IAAK,QAAQ;AAAI","debugId":null}}]
-=======
-    {"offset": {"line": 12, "column": 0}, "map": {"version":3,"sources":["file:///home/manirul/Developer/Projects/qr-code-tracker/src/app/favicon.ico.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":[],"mappings":";;;AAAA;;uCACe;IAAE,KAAA,8GAAA,CAAA,UAAG;IAAE,OAAO;IAAK,QAAQ;AAAI","debugId":null}}]
->>>>>>> 8c30c6e17ca7a3917d8e8f510b41681d3a1002ea
 }

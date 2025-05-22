@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { QRCode } from "react-qrcode-logo";
 import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
+import { QRCode } from "react-qrcode-logo";
 
 export default function Home() {
   const [link, setLink] = useState("");
@@ -52,7 +51,7 @@ export default function Home() {
           <h3 className="text-lg font-semibold mb-4">Your Form</h3>
           <p className="mb-4">Scan the QR code to visit:</p>
           <QRCode value={submittedLink} size={200} />
-          <p className="mt-4 break-words text-sm text-gray-500">{submittedLink}</p>
+          <p className="mt-4 wrap-anywhere text-sm text-gray-500 text-wrap">{submittedLink}</p>
         </div>
       )}
 
