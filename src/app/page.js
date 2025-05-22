@@ -1,17 +1,11 @@
 "use client";
 
-
 import Image from "next/image";
-import styles from "./page.module.css";
 import { QRCode } from "react-qrcode-logo";
 import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
 
-
-
-
 export default function Home() {
-
   const [link, setLink] = useState("");
   const [submittedLink, setSubmittedLink] = useState(null);
   const formRef = useRef(null);
@@ -25,34 +19,35 @@ export default function Home() {
   const handleDownload = async () => {
     if (formRef.current === null) return;
     const dataUrl = await toPng(formRef.current);
-    const link = document.createElement("a");
-    link.download = "form-with-qr.png";
-    link.href = dataUrl;
-    link.click();
+    const a = document.createElement("a");
+    a.download = "form-with-qr.png";
+    a.href = dataUrl;
+    a.click();
   };
 
   return (
-    <div className="min-h-screen p-6 bg-gray-100 flex flex-col items-center justify-center">
-      <row>
-      <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md col-md-6">
-        <h2 className="text-xl font-semibold mb-4">QR Code Form Generator</h2>
+    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gray-100 px-4">
+      <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md">
+        <h2 className="text-xl font-semibold mb-4 text-center">QR Code Form Generator</h2>
         <input
           type="text"
           placeholder="Enter information link"
           value={link}
           onChange={(e) => setLink(e.target.value)}
-          className="w-full p-2 border rounded mb-4"
+          className="w-full p-2 border border-gray-300 rounded mb-4"
         />
-        <button onClick={handleGenerate} className="w-full btn btn-success mb-2 col-md-2">Generate QR</button>
+        <button
+          onClick={handleGenerate}
+          className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded mb-2"
+        >
+          Generate QR
+        </button>
       </div>
 
-        
-      </row>
-      
       {submittedLink && (
         <div
           ref={formRef}
-          className="mt-6 p-6 bg-white rounded-2xl shadow-lg w-full max-w-md text-center"
+          className="mt-6 p-6 bg-white rounded-2xl shadow-lg w-full max-w-md text-center flex flex-col items-center"
         >
           <h3 className="text-lg font-semibold mb-4">Your Form</h3>
           <p className="mb-4">Scan the QR code to visit:</p>
@@ -62,11 +57,17 @@ export default function Home() {
       )}
 
       {submittedLink && (
-        <button onClick={handleDownload} className="mt-4">Download Form</button>
+        <button
+          onClick={handleDownload}
+          className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded"
+        >
+          Download Form
+        </button>
       )}
     </div>
   );
-};
+}
+
   // return (
   //   <div className={styles.page}>
   //     <main className={styles.main}>
